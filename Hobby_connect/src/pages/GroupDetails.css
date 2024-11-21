@@ -1,0 +1,19 @@
+/* GroupDetails.css */
+.group-details {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+  
+  .group-details h1 {
+    color: #2250fc;
+  }
+  
+  .group-details p {
+    font-size: 18px;
+    color: #555;
+  }
+  

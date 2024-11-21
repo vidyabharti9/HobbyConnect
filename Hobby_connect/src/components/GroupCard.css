@@ -1,0 +1,50 @@
+/* GroupCard.css */
+.group-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    width: 100%;
+    max-width: 320px;
+    text-align: center;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 20px;
+  }
+  
+  .group-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  .group-card h3 {
+    margin: 15px 0;
+    color: #2250fc;
+  }
+  
+  .group-card p {
+    color: #555;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  
+  .group-card a {
+    text-decoration: none;
+    color: #2250fc;
+    font-weight: bold;
+    padding: 10px;
+    display: inline-block;
+    margin-top: 10px;
+    transition: color 0.3s ease;
+  }
+  
+  .group-card a:hover {
+    color: #1a40c4;
+  }
+  
+  .group-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  }
+  
