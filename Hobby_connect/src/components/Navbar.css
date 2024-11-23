@@ -1,7 +1,7 @@
 /* Navbar.css */
 nav {
     padding: 15px;
-    background: linear-gradient(to right, #2250fc, #1a40c4);
+    background: green;
     color: white;
     position: sticky;
     top: 0;
@@ -27,6 +27,6 @@ nav {
   }
   
   nav ul li a:hover {
-    background-color: #1a40c4;
+    background-color: #08631fa0;
   }
   

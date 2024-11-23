@@ -1,14 +1,14 @@
 /* Footer.css */
 footer {
-    background-color: #2250fc;
-    color: white;
+    background-color: #073002;
+    color: rgb(8, 8, 8);
     text-align: center;
     padding: 30px 20px;
     font-size: 16px;
     position: relative;
     bottom: 0;
     width: 100%;
-    border-top: 2px solid #1a40c4;
+    border-top: 2px solid #050710;
   }
   
   footer .social-icons {
@@ -26,11 +26,11 @@ footer {
   
   footer .social-icons a:hover {
     transform: scale(1.2);
-    color: #ff6347; /* Fun hover color */
+    color: #92e0b9; /* Fun hover color */
   }
   
   footer p {
-    font-size: 14px;
+    font-size: 18px;
     color: #ddd;
     margin-top: 10px;
     font-style: italic;
@@ -40,6 +40,6 @@ footer {
     font-size: 20px;
     margin-top: 20px;
     font-weight: bold;
-    color: #ff6347; /* Fun text color */
+    color: #2b120e; /* Fun text color */
   }
   

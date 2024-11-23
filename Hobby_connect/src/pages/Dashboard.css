@@ -1,19 +1,162 @@
-/* Dashboard.css */
+/* General Layout */
 .dashboard {
-    padding: 40px 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100vh; /* Full height of the screen */
+  background: linear-gradient(135deg, #f9fdf9, #eaf5ea); /* Light green gradient */
+  font-family: 'Poppins', sans-serif;
+  color: #2e4a21; /* Dark green */
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Profile Section */
+.profile-section {
+  flex: 0 0 25%; /* Fixed 25% width for profile section */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #d2e6cf; /* Soft green background */
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.profile-avatar {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 4px solid #b6c8a9;
+  margin-bottom: 20px;
+}
+
+.basic-info {
+  text-align: center;
+}
+
+.user-name {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.user-email {
+  font-size: 1rem;
+  color: #566b56;
+  margin-top: 5px;
+}
+
+/* Details Section */
+.details-section {
+  flex: 1; /* Take the remaining width */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Hobbies Section */
+.hobbies-section {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.hobbies-section h2 {
+  font-size: 1.6rem;
+  margin-bottom: 15px;
+}
+
+.hobby-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  list-style: none;
+  padding: 0;
+}
+
+.hobby-item {
+  background: #eaf5ea;
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-weight: bold;
+  color: #2e6b3b;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.add-hobby-form {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.hobby-input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #b6c8a9;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.add-hobby-button {
+  padding: 10px 20px;
+  background: #397d4b;
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-hobby-button:hover {
+  background: #2e6b3b;
+}
+
+/* Settings Section */
+.settings-section {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.settings-section h2 {
+  font-size: 1.6rem;
+  margin-bottom: 15px;
+}
+
+.settings-button {
+  padding: 10px 20px;
+  background: #397d4b;
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.settings-button:hover {
+  background: #2e6b3b;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .dashboard {
+    flex-direction: column;
   }
-  
-  .dashboard h1 {
-    color: #2250fc;
+
+  .profile-section {
+    flex: 0 0 auto;
+    width: 100%;
+    text-align: center;
   }
-  
-  .dashboard p {
-    font-size: 18px;
-    color: #555;
+
+  .details-section {
+    width: 100%;
   }
-  
+}
