@@ -6,7 +6,7 @@
   width: 100%;
   max-width: 320px;
   text-align: center;
-  background: #cadfc9; /* Light mint green background */
+  background: #cbf1ae; /* Light mint green background */
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Slight darker shadow */
   transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
   margin: 20px;
