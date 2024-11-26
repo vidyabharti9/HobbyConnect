@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
-import './Login.css';
-import { useNavigate } from 'react-router-dom';
+import React, { useState } from "react";
+import "./Login.css";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
   const navigate = useNavigate();
 
   const handleLogin = async (e) => {
@@ -25,25 +25,51 @@ function Login() {
       const data = await response.json();
 
       if (response.status === 200) {
-        localStorage.setItem("authToken", data.token); // Save the JWT token
-        navigate("/"); // Redirect to home page
+        localStorage.setItem("authToken", data.token);
+        navigate("/");
       } else {
         setError(data.message);
       }
     } catch (err) {
-      setError("An error occurred, please try again.");
+      setError("Oops, something went wrong! Please try again.");
     }
   };
 
+  const handleGoogleSignIn = () => {
+    alert("Google Sign-In is coming soon!");
+  };
+
   return (
-    <div className="login-container">
+    <div className="login-page">
+      <div className="content">
+      <div className="text-container">
+  <h1>Welcome to HobbyConnect!</h1>
+  <p>
+    🕺💃 Let's break the routine and add some fun to your day! Whether you're
+    into dancing, painting, gaming, or something quirky — we've got a place
+    for YOU! 🎨🎮
+  </p>
+  <p>
+    Join the most vibrant community where hobbies meet passion! 🚀 Explore,
+    share, and make unforgettable memories!
+  </p>
+</div>
+
+
+      </div>
+
       <div className="login-card">
-        <h2>Log in to HobbyConnect</h2>
-        <p>Connect with others and share your hobbies effortlessly.</p>
+        <img
+          src="https://cdn-icons-png.flaticon.com/512/2917/2917998.png"
+          alt="HobbyConnect Logo"
+          className="login-logo"
+        />
+        <h2>Log in to join the fun</h2>
+  
         <form onSubmit={handleLogin}>
           <input
             type="email"
-            placeholder="Email"
+            placeholder="Email address"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
@@ -56,8 +82,15 @@ function Login() {
           <button type="submit">Log In</button>
         </form>
         {error && <p className="error">{error}</p>}
-        <a href="#" className="forgot-password">Forgot password?</a>
-        <a href="/signup" className="signup-link">Sign up for HobbyConnect</a>
+        <div className="login-links">
+          <a href="#" className="forgot-password">
+            Forgot password?
+          </a>
+          <span> · </span>
+          <a href="/signup" className="signup-link">
+            Not a member yet? Sign up now!
+          </a>
+        </div>
       </div>
     </div>
   );

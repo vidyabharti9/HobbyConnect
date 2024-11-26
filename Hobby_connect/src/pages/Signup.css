@@ -1,12 +1,13 @@
 /* src/styles/Signup.css */
 
 .signup-container {
-    max-width: 400px;
+    max-width: 600px;
     margin: 0 auto;
     padding: 20px;
     border-radius: 8px;
-    background-color: #f9f9f9;
+    background-color: #e9fcd0;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    align-items: center;
   }
   
   .signup-container h2 {
@@ -29,7 +30,7 @@
   
   .signup-container button {
     padding: 12px;
-    background-color: #1da1f2;
+    background-color: #487433;
     color: white;
     font-size: 16px;
     border: none;
@@ -39,7 +40,7 @@
   }
   
   .signup-container button:hover {
-    background-color: #1a91c2;
+    background-color: #04370b;
   }
   
   .error {
