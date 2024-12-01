@@ -1,236 +1,238 @@
-/* General Body Styling */
+/* General Styles */
 body {
   font-family: 'Poppins', sans-serif;
-  background-color: #738973; /* Dark green background */
+  background-color: #ecf0f1;
+  color: #333;
   margin: 0;
   padding: 0;
-  color: #f0f0f0; /* Light text color for contrast */
-  min-height: 100vh; /* Ensure body takes full viewport height */
-  display: flex;
-  flex-direction: column;
 }
 
-/* Group Details Section */
+.container {
+  width: 90%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Group Section */
 .group-details {
-  max-width: 100%; /* Expand to full width */
-  margin: 2rem auto;
-  background-color: #e5e9e5; /* Greenish background for the container */
-  padding: 2rem;
+  max-width: 100%;
+  margin: 0;
+  padding: 30px;
+  background-color: #f3f4f6;
   border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  flex-grow: 1; /* Allow it to grow within the flex container */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
 }
 
-/* Group Header */
+.group-header {
+  text-align: center;
+  margin-bottom: 30px;
+  padding: 20px;
+  background: #2c3e50;
+  color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
 .group-header h1 {
   font-size: 2.5rem;
-  color: #050b06; /* Dark green text */
-  text-align: center;
+  color: #27ae60;
+  margin-bottom: 10px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 .group-header p {
   font-size: 1.2rem;
-  text-align: center;
-  margin: 0.5rem 0;
-  color: #274a27; /* Softer green for text */
+  color: #bdc3c7;
 }
 
-/* Join Group Button */
+/* Button Styles */
 .join-group-button {
-  display: block;
-  margin: 1rem auto;
-  padding: 0.8rem 2rem;
-  background-color: #28a745; /* Green button */
+  background: #27ae60;
   color: #fff;
   border: none;
-  border-radius: 8px;
+  padding: 12px 25px;
   font-size: 1rem;
+  border-radius: 25px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .join-group-button:hover {
-  background-color: #218838; /* Darker green on hover */
+  background: #1e8449;
+  transform: scale(1.05);
 }
 
-/* Joined Message */
-.joined-message {
+/* Group Features */
+.group-features {
+  margin-top: 30px;
+  padding: 25px;
+  background: #ecf0f1;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.group-features h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #2c3e50;
   text-align: center;
-  font-size: 1.1rem;
-  color: #0c4e0c;
-}
-
-/* Group Features, Members, and Posts Sections */
-.group-features,
-.group-members,
-.group-posts {
-  margin-top: 2rem;
-}
-
-.group-features h2,
-.group-members h2,
-.group-posts h2 {
-  color: #d4edda; /* Light green */
-  text-align: center;
-  margin-bottom: 1rem;
-  font-size: 1.8rem;
 }
 
 .group-features ul {
-  list-style: none;
+  list-style-type: none;
   padding: 0;
-  color: #f0f0f0;
-}
-
-.group-features ul li {
-  background-color: #155724; /* Darker green for feature items */
-  margin: 0.5rem 0;
-  padding: 0.8rem;
-  border-radius: 6px;
-  text-align: center;
-}
-
-/* Group Members Section */
-.group-members .members-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
 }
 
-.member-card {
-  background-color: #1e4631; /* Slightly lighter green for cards */
-  padding: 1rem;
-  border-radius: 10px;
+.group-features li {
+  font-size: 1rem;
+  color: #34495e;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.8s ease-out;
+  position: relative;
+}
+
+/* Post Options */
+.post-options {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin: 40px 0;
+}
+
+.post-options textarea {
+  font-family: 'Poppins', sans-serif;
+  border: 1px solid #95a5a6;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 1rem;
+  resize: none;
+}
+
+.post-options input[type='file'] {
+  font-size: 1rem;
+}
+
+.post-options button {
+  background: #27ae60;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  align-self: flex-start;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+}
+
+.post-options button:hover {
+  background: #1e8449;
+  transform: translateY(-3px);
+}
+
+/* Group Posts */
+.group-posts {
+  margin-top: 30px;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.group-posts h2 {
+  font-size: 2rem;
+  color: #2c3e50;
+  margin-bottom: 20px;
   text-align: center;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.post {
+  background: #fff;
+  border: 1px solid #bdc3c7;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.post-header p {
+  font-size: 1rem;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.post-image {
+  width: 100%;
+  margin-top: 10px;
+  border-radius: 10px;
+}
+
+/* Like Button */
+.like-button {
+  background: #27ae60;
+  color: #fff;
+  border: none;
+  padding: 8px 15px;
+  font-size: 0.9rem;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.like-button:hover {
+  background: #1e8449;
+  transform: translateY(-2px);
+}
+
+/* Comments */
+.comment {
+  background: #f1f1f1;
+  margin: 10px 0;
+  padding: 12px;
+  border-radius: 8px;
+}
+
+/* Member Card */
+.member-card {
+  width: 140px;
+  text-align: center;
+  background: #fff;
+  border: 1px solid #bdc3c7;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
 }
 
 .member-card:hover {
   transform: scale(1.05);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 .member-pic {
-  width: 70px;
-  height: 70px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
-  margin-bottom: 0.5rem;
-  border: 2px solid #d4edda; /* Light green border */
+  margin-bottom: 10px;
 }
 
-/* Invite Button */
-.invite-button {
-  display: block;
-  margin: 1rem auto;
-  padding: 0.8rem 2rem;
-  background-color: #28a745;
-  color: #fff;
-  border: none;
-  border-radius: 8px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+.member-card p {
+  font-size: 0.9rem;
+  color: #34495e;
 }
 
-.invite-button:hover {
-  background-color: #218838;
-}
-
-/* Post Area */
-.group-posts {
-  margin-top: 2rem;
-}
-
-.post-area {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.post-input {
-  width: 80%;
-  padding: 1rem;
-  border-radius: 10px;
-  border: 1px solid #ddd;
-  margin-bottom: 1rem;
-  font-size: 1rem;
-}
-
-.post-button {
-  padding: 0.8rem 2rem;
-  background-color: #28a745;
-  color: #fff;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.post-button:hover {
-  background-color: #218838;
-}
-
-/* Posts List */
-.post {
-  background-color: #1e4631;
-  border-radius: 10px;
-  margin-bottom: 1rem;
-  padding: 1rem;
-  color: #f0f0f0;
-}
-
-.post-header {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 1rem;
-}
-
-.post-footer {
-  background-color: #274a27;
-  color: wheat;
-}
-
-.like-button {
-  background-color: #28a745;
-  border: none;
-  color: white;
-  cursor: pointer;
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
-}
-
-.like-button:hover {
-  background-color: #218838;
-}
-
-/* Full Screen Height */
-html, body {
-  height: 100%;
-}
-
-.group-details {
-  height: auto;
-  padding: 2rem;
-  margin: 0;
-  border-radius: 0; /* Reset any extra border radius */
-}
-
-/* Margin at the bottom */
-.group-details {
-  margin-bottom: 2rem;
-}
-
-/* Media Queries for Responsiveness */
-@media screen and (min-width: 768px) {
-  .group-details {
-    max-width: 100%; /* Allow content to stretch more on larger screens */
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
   }
-
-  .group-posts {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1rem;
+  to {
+    opacity: 1;
   }
 }
