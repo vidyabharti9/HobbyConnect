@@ -1,0 +1,160 @@
+/* General Layout */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f7f7f7;
+}
+
+.content {
+  max-width: 50%;
+  /* Removed animation here */
+}
+
+.content h1 {
+  font-size: 3.5rem;
+  color: #161801;  /* White text for contrast */
+  margin-bottom: 1rem;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Adding shadow for better readability */
+}
+
+.content p {
+  font-size: 1.5rem;
+  color: #050505;  /* Lighter color for readability */
+  line-height: 1.8;
+  margin-top: 1rem;
+  font-weight: 400;  /* Make the paragraph text bold */
+  text-shadow: 1px 1px 3px rgba(252, 251, 251, 0.995); /* Adding shadow for better readability */
+}
+
+.content p span {
+  color: #f6f8f6;
+  font-weight: bold;
+}
+
+.login-page {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5%;
+  min-height: 100vh;
+  background-image: url('image.png'); /* High-resolution image */
+  background-repeat: no-repeat;
+  background-size: cover; /* Full coverage */
+  background-position: center; /* Center the image */
+  position: relative;
+  filter: none; /* Ensure no blur */
+}
+
+.login-page::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2); /* Slight dark overlay */
+  z-index: 1;
+}
+.text-container {
+  background-color: rgb(240, 251, 171); /* Semi-transparent black background */
+  color: #fff; /* White text for readability */
+  padding: 20px; /* Add padding around the text */
+  border-radius: 8px; /* Rounded corners */
+  max-width: 800px; 
+  margin: 0 auto; 
+  box-shadow: white; /* Optional shadow for depth */
+  text-align: center; /* Center the text */
+}
+
+.text-container h1 {
+  font-size: 2.5rem; /* Adjust heading size */
+  margin-bottom: 10px;
+  font-weight: bold;
+  color:#050505;
+}
+
+.text-container p {
+  font-size: 1.2rem; /* Adjust paragraph size */
+  line-height: 1.6; /* Better line spacing */
+  margin-top: 10px;
+}
+
+
+/* Login card styling */
+.login-card {
+  max-width: 400px;
+  width: 100%;
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(245, 243, 243, 0.954);
+  text-align: center;
+  z-index: 2;  /* Ensures the login card appears above the background */
+  position: relative;
+}
+
+/* Logo */
+.login-logo {
+  width: 80px;
+  margin-bottom: 1.5rem;
+}
+
+/* Divider */
+.divider {
+  margin: 1rem 0;
+  text-align: center;
+  color: #888;
+  position: relative;
+}
+
+.divider span {
+  background-color: #fff;
+  padding: 0 10px;
+  font-size: 0.9rem;
+}
+
+.divider::before,
+.divider::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 40%;
+  height: 1px;
+  background: #f1eeee;
+}
+
+.divider::before {
+  left: 5%;
+}
+
+.divider::after {
+  right: 5%;
+}
+
+.login-card input {
+  width: 100%;
+  padding: 12px;
+  margin: 0.5rem 0;
+  border: 1px solid #fffafa;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.login-card button {
+  width: 100%;
+  padding: 12px;
+  background-color: #048e57b9;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.login-card button:hover {
+  background-color: #55dc4b;
+  color: #333;
+}
