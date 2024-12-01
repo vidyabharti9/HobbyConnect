@@ -12,7 +12,6 @@ const groupsData = {
       'Community photo gallery',
       'Photo editing contests',
       'Member spotlight of the week',
-      'Monthly photo exhibitions',
     ],
     members: [
       { id: 1, name: 'John Doe', profilePic: 'https://via.placeholder.com/50' },
@@ -28,7 +27,6 @@ const groupsData = {
       'Reading challenges',
       'Book recommendations from members',
       'Exclusive author interviews',
-      'Literary quizzes and games',
     ],
     members: [
       { id: 3, name: 'Emily Brown', profilePic: 'https://via.placeholder.com/50' },
@@ -44,7 +42,6 @@ const groupsData = {
       'Progress tracking',
       'Weekly workout routines',
       'Virtual fitness meetups',
-      'Fitness nutrition guides',
     ],
     members: [
       { id: 5, name: 'Mike Johnson', profilePic: 'https://via.placeholder.com/50' },
@@ -60,7 +57,6 @@ const groupsData = {
       'Gaming tournaments',
       'Game of the month voting',
       'Exclusive behind-the-scenes content',
-      'Group play sessions with members',
     ],
     members: [
       { id: 7, name: 'Chris Green', profilePic: 'https://via.placeholder.com/50' },
@@ -76,7 +72,6 @@ const groupsData = {
       'Monthly challenges',
       'Weekly recipe spotlights',
       'Cooking tips from professionals',
-      'Ingredient swap ideas',
     ],
     members: [
       { id: 9, name: 'Alice Chef', profilePic: 'https://via.placeholder.com/50' },
@@ -92,7 +87,6 @@ const groupsData = {
       'Monthly contests',
       'Crafting resource library',
       'Live crafting sessions',
-      'Seasonal project ideas',
     ],
     members: [
       { id: 11, name: 'DIY Master', profilePic: 'https://via.placeholder.com/50' },
@@ -108,7 +102,6 @@ const groupsData = {
       'Photo sharing',
       'Destination reviews from members',
       'Travel budget planning',
-      'Local travel tips and hacks',
     ],
     members: [
       { id: 13, name: 'Nomad Jack', profilePic: 'https://via.placeholder.com/50' },
@@ -124,7 +117,6 @@ const groupsData = {
       'Exclusive playlists',
       'Virtual concerts with members',
       'Music news and releases',
-      'Weekly music challenges',
     ],
     members: [
       { id: 15, name: 'Rockstar Rick', profilePic: 'https://via.placeholder.com/50' },
@@ -140,7 +132,6 @@ const groupsData = {
       'Pet adoption discussions',
       'Member pet of the week',
       'Pet product reviews',
-      'Weekly pet health advice',
     ],
     members: [
       { id: 17, name: 'Dog Lover Dan', profilePic: 'https://via.placeholder.com/50' },
@@ -156,7 +147,8 @@ function GroupDetails() {
   const [posts, setPosts] = useState([]);
   const [newPost, setNewPost] = useState('');
   const [image, setImage] = useState(null);
-  const [comments, setComments] = useState({}); // To store comments for each post
+  const [comments, setComments] = useState({});
+  const [searchQuery, setSearchQuery] = useState('');
 
   useEffect(() => {
     if (groupsData[id]) {
@@ -168,6 +160,19 @@ function GroupDetails() {
 
   const handleJoinGroup = () => setIsMember(true);
 
+  const handlePostSubmit = () => {
+    if (newPost.trim() || image) {
+      setPosts([
+        ...posts,
+        { id: posts.length + 1, content: newPost, likes: 0, image: image, reactions: {}, comments: [] },
+      ]);
+      setNewPost('');
+      setImage(null);
+    }
+  };
+
+  const handleImageChange = (e) => setImage(URL.createObjectURL(e.target.files[0]));
+
   const handleLikePost = (postId) => {
     const updatedPosts = posts.map((post) =>
       post.id === postId ? { ...post, likes: post.likes + 1 } : post
@@ -175,26 +180,30 @@ function GroupDetails() {
     setPosts(updatedPosts);
   };
 
+  const handleReactToPost = (postId, reaction) => {
+    const updatedPosts = posts.map((post) => {
+      if (post.id === postId) {
+        const reactions = { ...post.reactions };
+        reactions[reaction] = (reactions[reaction] || 0) + 1;
+        return { ...post, reactions };
+      }
+      return post;
+    });
+    setPosts(updatedPosts);
+  };
+
+  const handleSearch = (e) => {
+    setSearchQuery(e.target.value.toLowerCase());
+  };
+
+  const filteredPosts = posts.filter((post) =>
+    post.content.toLowerCase().includes(searchQuery)
+  );
+
   const handleCommentSubmit = (postId, comment) => {
-    if (!comment.trim()) return; // Avoid empty comments
+    if (!comment.trim()) return;
     const updatedComments = { ...comments, [postId]: [...(comments[postId] || []), comment] };
     setComments(updatedComments);
-  };
-  
-
-  const handlePostSubmit = () => {
-    if (newPost.trim() || image) {
-      setPosts([
-        ...posts,
-        { id: posts.length + 1, content: newPost, likes: 0, image: image, comments: [] },
-      ]);
-      setNewPost('');
-      setImage(null); // Reset image after post
-    }
-  };
-
-  const handleImageChange = (e) => {
-    setImage(URL.createObjectURL(e.target.files[0])); // Handle file upload and preview
   };
 
   return (
@@ -211,77 +220,85 @@ function GroupDetails() {
         )}
       </div>
 
-      {groupDetails.features && (
-        <div className="group-features">
-          <h2>Group Features</h2>
-          <ul>
-            {groupDetails.features.map((feature, index) => (
-              <li key={index}>{feature}</li>
-            ))}
-          </ul>
-        </div>
-      )}
+      {isMember && (
+        <>
+          <div className="announcements">
+            <h2>Announcements</h2>
+            <p>Welcome to the group! Stay updated with our latest events and activities.</p>
+          </div>
 
-      <div className="post-options">
-        <textarea
-          value={newPost}
-          onChange={(e) => setNewPost(e.target.value)}
-          placeholder="What's on your mind?"
-        />
-        <input type="file" onChange={handleImageChange} />
-        <button onClick={handlePostSubmit}>Post</button>
-      </div>
+          <div className="group-features">
+            <h2>Group Features</h2>
+            <ul>
+              {groupDetails.features?.map((feature, index) => (
+                <li key={index}>{feature}</li>
+              ))}
+            </ul>
+          </div>
 
-      <div className="group-posts">
-        <h2>Recent Posts</h2>
-        {posts.map((post) => (
-          <div className="post" key={post.id}>
-            <div className="post-header">
-              <p>{post.content}</p>
-              {post.image && <img src={post.image} alt="Post media" className="post-image" />}
-            </div>
+          <div className="search-posts">
+            <h2>Search Posts</h2>
+            <input
+              type="text"
+              placeholder="Search posts..."
+              value={searchQuery}
+              onChange={handleSearch}
+            />
+          </div>
 
-            <div className="post-actions">
-              <button className="like-button" onClick={() => handleLikePost(post.id)}>
-                👍 Like {post.likes}
-              </button>
-            </div>
+          <div className="post-options">
+            <textarea
+              value={newPost}
+              onChange={(e) => setNewPost(e.target.value)}
+              placeholder="What's on your mind?"
+            />
+            <input type="file" onChange={handleImageChange} />
+            <button onClick={handlePostSubmit}>Post</button>
+          </div>
 
-            <div className="post-comments">
-              <input
-                type="text"
-                placeholder="Add a comment"
-                onKeyDown={(e) => {
-                  if (e.key === 'Enter' && e.target.value.trim()) {
-                    handleCommentSubmit(post.id, e.target.value);
-                    e.target.value = ''; // Clear input
-                  }
-                }}
-              />
-              <div className="comments-list">
-                {comments[post.id]?.map((comment, index) => (
-                  <div key={index} className="comment">
-                    <p>{comment}</p>
+          <div className="group-posts">
+            <h2>Recent Posts</h2>
+            {filteredPosts.map((post) => (
+              <div className="post" key={post.id}>
+                <div className="post-header">
+                  <p>{post.content}</p>
+                  {post.image && <img src={post.image} alt="Post media" className="post-image" />}
+                </div>
+                <div className="post-actions">
+                  <button onClick={() => handleLikePost(post.id)}>👍 {post.likes}</button>
+                  <div className="reactions">
+                    {['❤️', '😆', '😮', '😢', '😡'].map((reaction) => (
+                      <button
+                        key={reaction}
+                        onClick={() => handleReactToPost(post.id, reaction)}
+                      >
+                        {reaction} {post.reactions?.[reaction] || 0}
+                      </button>
+                    ))}
                   </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
+                </div>
 
-      {isMember && groupDetails.members && (
-        <div className="group-members">
-          <h2>Group Members</h2>
-          <div className="members-list">
-            {groupDetails.members.map((member) => (
-              <div key={member.id} className="member-card">
-                <img src={member.profilePic} alt={member.name} className="member-pic" />
-                <p>{member.name}</p>
+                <div className="post-comments">
+                  <input
+                    type="text"
+                    placeholder="Add a comment"
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter' && e.target.value.trim()) {
+                        handleCommentSubmit(post.id, e.target.value);
+                        e.target.value = '';
+                      }
+                    }}
+                  />
+                  <div className="comments-list">
+                    {comments[post.id]?.map((comment, index) => (
+                      <p key={index}>{comment}</p>
+                    ))}
+                  </div>
+                </div>
               </div>
             ))}
           </div>
-        </div>
+        </>
       )}
     </div>
   );
