@@ -1,7 +1,0 @@
-node_modules/
-.env
-*.log
-*.lock
-coverage/
-dist/
-tmp/
