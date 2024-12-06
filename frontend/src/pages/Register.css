@@ -1,0 +1,79 @@
+/* Container to isolate the registration form */
+.register-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Ensure the form is centered */
+    background-color: #f4f4f4; /* Light grey background for the container */
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  form {
+    background-color: #fff; /* White background */
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 420px;
+    border: 1px solid #e0e0e0;
+  }
+  
+  /* Existing form styles for inputs and buttons */
+  form input[type="text"],
+  form input[type="email"],
+  form input[type="password"],
+  form input[type="file"] {
+    width: 100%;
+    padding: 12px 15px;
+    margin: 12px 0;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+    background-color: #f9f9f9;
+  }
+  
+  form button[type="submit"],
+  form button[type="button"] {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 14px 18px;
+    font-size: 16px;
+    margin-top: 20px;
+    width: 100%;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  form ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 12px;
+  }
+  
+  form ul li {
+    background-color: #e5e5e5;
+    color: #333;
+    padding: 10px 14px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #ccc;
+  }
+  
+  form div {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #666;
+  }
+  
+  form button:hover {
+    background-color: #555;
+  }
+  

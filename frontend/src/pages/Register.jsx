@@ -1,6 +1,7 @@
 import { useState, useContext } from 'react';
 import { registerUser } from '../services/api';
 import { AuthContext } from '../context/AuthContext';
+import './Register.css';
 
 const Register = () => {
   const [form, setForm] = useState({ name: '', email: '', password: '', hobbies: [], profilePicture: null });
@@ -47,57 +48,59 @@ const Register = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input
-        type="text"
-        name="name"
-        placeholder="Name"
-        value={form.name}
-        onChange={handleChange}
-        required
-      />
-      <input
-        type="email"
-        name="email"
-        placeholder="Email"
-        value={form.email}
-        onChange={handleChange}
-        required
-      />
-      <input
-        type="password"
-        name="password"
-        placeholder="Password"
-        value={form.password}
-        onChange={handleChange}
-        required
-      />
-      <input
-        type="file"
-        name="profilePicture"
-        onChange={handleFileChange}
-      />
-      {form.profilePicture && (
-        <div>
-          <p>Profile Picture: {form.profilePicture.name}</p>
-        </div>
-      )}
-      {/* Hobby input and add button */}
-      <input
-        type="text"
-        name="hobby"
-        value={form.hobby || ''} // Ensure controlled input
-        placeholder="Add a hobby"
-        onChange={handleHobbyChange}
-      />
-      <button type="button" onClick={handleAddHobby}>Add Hobby</button>
-      <ul>
-        {form.hobbies.map((hobby, index) => (
-          <li key={index}>{hobby}</li>
-        ))}
-      </ul>
-      <button type="submit">Register</button>
-    </form>
+    <div className="register-container"> {/* Outer container to isolate from homepage */}
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          name="name"
+          placeholder="Name"
+          value={form.name}
+          onChange={handleChange}
+          required
+        />
+        <input
+          type="email"
+          name="email"
+          placeholder="Email"
+          value={form.email}
+          onChange={handleChange}
+          required
+        />
+        <input
+          type="password"
+          name="password"
+          placeholder="Password"
+          value={form.password}
+          onChange={handleChange}
+          required
+        />
+        <input
+          type="file"
+          name="profilePicture"
+          onChange={handleFileChange}
+        />
+        {form.profilePicture && (
+          <div>
+            <p>Profile Picture: {form.profilePicture.name}</p>
+          </div>
+        )}
+        {/* Hobby input and add button */}
+        <input
+          type="text"
+          name="hobby"
+          value={form.hobby || ''} // Ensure controlled input
+          placeholder="Add a hobby"
+          onChange={handleHobbyChange}
+        />
+        <button type="button" onClick={handleAddHobby}>Add Hobby</button>
+        <ul>
+          {form.hobbies.map((hobby, index) => (
+            <li key={index}>{hobby}</li>
+          ))}
+        </ul>
+        <button type="submit">Register</button>
+      </form>
+    </div>
   );
 };
 

@@ -1,0 +1,85 @@
+/* Scoped Styles for Login Component */
+.login-container {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f8f8; /* Light cream background */
+    color: #333; /* Neutral dark gray text */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.login-container form {
+    background-color: #ffffff; /* White background */
+    border: 1px solid #ddd; /* Light gray border */
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 30px 40px;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+/* Form Fields */
+.login-container input {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc; /* Light gray border for input */
+    border-radius: 5px;
+    background-color: #f8f8f8; /* Cream background for inputs */
+    color: #333; /* Dark gray text */
+    font-size: 1em;
+    transition: border 0.3s ease-in-out;
+}
+
+.login-container input:focus {
+    outline: none;
+    border-color: #4e1b0c; /* Highlighted border color */
+}
+
+/* Submit Button */
+.login-container button {
+    width: 100%;
+    padding: 12px 15px;
+    background-color: #333; /* Dark gray button */
+    color: #fff; /* White text */
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.login-container button:hover {
+    background-color: #111; /* Slightly darker gray */
+    transform: scale(1.02); /* Slight hover effect */
+}
+
+.login-container button:active {
+    background-color: #444; /* Active state color */
+}
+
+/* Heading Style */
+.login-container form h2 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    color: #222; /* Darker gray for heading */
+}
+
+/* Form Container */
+.login-container form p {
+    font-size: 0.9em;
+    color: #777; /* Subtle gray for small text */
+}
+
+.login-container form p a {
+    color: #4e1b0c; /* Link color matching the palette */
+    text-decoration: none;
+}
+
+.login-container form p a:hover {
+    text-decoration: underline;
+}

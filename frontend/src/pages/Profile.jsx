@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { getUserProfile, updateUserProfile, getHobbyRecommendations, createGroup } from "../services/api";
-
+import "./Profile.css"
 const Profile = () => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
