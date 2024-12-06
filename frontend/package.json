@@ -10,10 +10,15 @@
     "preview": "vite preview"
   },
   "dependencies": {
+<<<<<<< HEAD:frontend/package.json
     "axios": "^1.7.8",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^7.0.2"
+=======
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+>>>>>>> 67a38cd9e28e383061002ecb3a1a2b9c82c379b3:Hobby_connect/package.json
   },
   "devDependencies": {
     "@eslint/js": "^9.15.0",
@@ -24,7 +29,12 @@
     "eslint-plugin-react": "^7.37.2",
     "eslint-plugin-react-hooks": "^5.0.0",
     "eslint-plugin-react-refresh": "^0.4.14",
+<<<<<<< HEAD:frontend/package.json
     "globals": "^15.12.0",
     "vite": "^6.0.1"
+=======
+    "globals": "^15.11.0",
+    "vite": "^5.4.10"
+>>>>>>> 67a38cd9e28e383061002ecb3a1a2b9c82c379b3:Hobby_connect/package.json
   }
 }

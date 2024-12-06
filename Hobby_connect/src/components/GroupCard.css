@@ -1,0 +1,132 @@
+/* Main group card container */
+.group-card {
+  border: 1px solid #b6c8a9; /* Soft green-grey border */
+  border-radius: 16px;
+  padding: 20px;
+  width: 100%;
+  max-width: 320px;
+  text-align: center;
+  background: #cbf1ae; /* Light mint green background */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Slight darker shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  margin: 20px;
+  position: relative;
+}
+
+.group-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  border: 2px solid #cde6c7; /* Subtle green border around images */
+  transition: transform 0.3s ease;
+}
+
+.group-card h3 {
+  margin: 15px 0;
+  color: #2d5a3b; /* Deep forest green for titles */
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.8rem; /* Slightly larger text for titles */
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.group-card p {
+  color: #5c6b52; /* Muted green-grey for text */
+  font-size: 14px;
+  line-height: 1.6;
+  font-family: 'Poppins', sans-serif;
+}
+
+.group-card a {
+  text-decoration: none;
+  color: #2a5d3f; /* Deep green for links */
+  background-color: #c5e4c0; /* Soft mint green background for links */
+  font-weight: bold;
+  padding: 12px 24px;
+  border-radius: 8px;
+  display: inline-block;
+  margin-top: 15px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow effect for buttons */
+}
+
+.group-card a:hover {
+  color: #ffffff;
+  background-color: #397d4b; /* Bold green hover effect */
+  transform: translateY(-3px); /* Button lift effect */
+}
+
+.group-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 15px 30px rgba(46, 74, 33, 0.2); /* Enhanced shadow with green tint */
+  background-color: #e1f5e6; /* Soft green background when hovered */
+}
+
+/* Adding a hover effect for the image */
+.group-card img:hover {
+  transform: scale(1.1); /* Image zoom effect */
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Add animation to text and link */
+.group-card h3,
+.group-card p {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s forwards;
+}
+
+.group-card a {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s 0.2s forwards; /* Delay the animation */
+}
+
+/* FadeInUp animation for text */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Group card container for consistent layout */
+.group-card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  background-color: #eaf4e7; /* Very light green background */
+  padding: 40px;
+  border-radius: 20px;
+  animation: containerFadeIn 1s ease-in-out;
+}
+
+/* Fade in effect for the container */
+@keyframes containerFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .group-card {
+    max-width: 100%;
+    padding: 15px;
+  }
+
+  .group-card-container {
+    padding: 20px;
+  }
+}
