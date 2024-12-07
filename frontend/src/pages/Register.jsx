@@ -12,12 +12,12 @@ const Register = () => {
   };
 
   const handleHobbyChange = (e) => {
-    setForm({ ...form, hobby: e.target.value }); // Update the hobby input field value
+    setForm({ ...form, hobby: e.target.value });
   };
 
   const handleAddHobby = () => {
     if (form.hobby && !form.hobbies.includes(form.hobby)) {
-      setForm({ ...form, hobbies: [...form.hobbies, form.hobby], hobby: '' }); // Add hobby and clear input
+      setForm({ ...form, hobbies: [...form.hobbies, form.hobby], hobby: '' });
     }
   };
 
@@ -32,14 +32,14 @@ const Register = () => {
     formData.append('name', form.name);
     formData.append('email', form.email);
     formData.append('password', form.password);
-    formData.append('hobbies', form.hobbies.join(',')); // Converting hobbies to a comma-separated string
+    formData.append('hobbies', form.hobbies.join(','));
     if (form.profilePicture) {
-      formData.append('profilePicture', form.profilePicture); // Add the profile picture
+      formData.append('profilePicture', form.profilePicture);
     }
 
     try {
       const res = await registerUser(formData);
-      login(res.data.token); // Assuming the token is returned upon successful registration
+      login(res.data.token);
       alert('Registration Successful!');
     } catch (error) {
       console.error(error.response?.data || error.message);
@@ -48,8 +48,10 @@ const Register = () => {
   };
 
   return (
-    <div className="register-container"> {/* Outer container to isolate from homepage */}
+    <div className='outer-container'>
+    <div className="register-container">
       <form onSubmit={handleSubmit}>
+        <h2>Register</h2>
         <input
           type="text"
           name="name"
@@ -84,11 +86,10 @@ const Register = () => {
             <p>Profile Picture: {form.profilePicture.name}</p>
           </div>
         )}
-        {/* Hobby input and add button */}
         <input
           type="text"
           name="hobby"
-          value={form.hobby || ''} // Ensure controlled input
+          value={form.hobby || ''}
           placeholder="Add a hobby"
           onChange={handleHobbyChange}
         />
@@ -100,6 +101,7 @@ const Register = () => {
         </ul>
         <button type="submit">Register</button>
       </form>
+    </div>
     </div>
   );
 };
