@@ -24,11 +24,7 @@ const HomePage = () => {
             <h3>Painting</h3>
             <p>Express your creativity and learn new techniques in painting.</p>
           </div>
-          <div className="hobby-card">
-            <img src="/images/cooking.png" alt="Cooking" />
-            <h3>Cooking</h3>
-            <p>Discover new recipes and improve your culinary skills.</p>
-          </div>
+        
           <div className="hobby-card">
             <img src="/images/gaming.png" alt="Gaming" />
             <h3>Gaming</h3>
@@ -52,11 +48,6 @@ const HomePage = () => {
             <img src="/images/dance.jpeg" alt="Dancing" />
             <h3>Dancing</h3>
             <p>Express yourself through dance and rhythm.</p>
-          </div>
-          <div className="hobby-card">
-            <img src="/images/writing.webp" alt="Writing" />
-            <h3>Writing</h3>
-            <p>Unleash your creativity by writing stories, poems, and more.</p>
           </div>
           <div className="hobby-card">
             <img src="/images/fitness.jpeg" alt="Fitness" />

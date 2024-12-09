@@ -2,10 +2,12 @@ import { useState, useContext } from 'react';
 import { registerUser } from '../services/api';
 import { AuthContext } from '../context/AuthContext';
 import './Register.css';
+import { useNavigate } from "react-router-dom";
 
 const Register = () => {
   const [form, setForm] = useState({ name: '', email: '', password: '', hobbies: [], profilePicture: null });
   const { login } = useContext(AuthContext);
+  const navigate = useNavigate(); 
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -41,6 +43,7 @@ const Register = () => {
       const res = await registerUser(formData);
       login(res.data.token);
       alert('Registration Successful!');
+      navigate('/');
     } catch (error) {
       console.error(error.response?.data || error.message);
       alert('Error registering user.');

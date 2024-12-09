@@ -27,6 +27,7 @@ div {
     animation: fadeIn 0.8s ease-in-out;
     padding: 20px;
     text-align: center;
+    width: 40%;
 }
 
 /* Profile Picture */

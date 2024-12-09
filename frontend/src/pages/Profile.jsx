@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { getUserProfile, updateUserProfile, getHobbyRecommendations, createGroup } from "../services/api";
 import "./Profile.css"
+
 const Profile = () => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
@@ -12,6 +14,7 @@ const Profile = () => {
         hobby: ''
     });
 
+    const navigate = useNavigate();
     useEffect(() => {
         const fetchProfile = async () => {
             const token = localStorage.getItem("token");
@@ -91,88 +94,88 @@ const Profile = () => {
 
     return (
         <div id="profile-container">
-    <h1>Welcome, {user.name}</h1>
+            <h1>Welcome, {user.name}</h1>
 
-    {/* Display Profile Picture */}
-    {user.profilePicture && (
-        <div id="profile-picture-container">
-            <h2>Profile Picture:</h2>
-            <img
-                src={`http://localhost:5000/${user.profilePicture}`}
-                alt="Profile"
-            />
+            {/* Display Profile Picture */}
+            {user.profilePicture && (
+                <div id="profile-picture-container">
+                    <h2>Profile Picture:</h2>
+                    <img
+                        src={`http://localhost:5000/${user.profilePicture}`}
+                        alt="Profile"
+                    />
+                </div>
+            )}
+
+            {!editing ? (
+                <>
+                    <p><strong>Email:</strong> {user.email}</p>
+                    <p><strong>Hobbies:</strong> {user.hobbies?.join(", ") || "No hobbies listed"}</p>
+                    <p><strong>Achievements:</strong></p>
+                    <ul>
+                        {user.achievements?.length
+                            ? user.achievements.map((achievement, index) => (
+                                <li key={index}>{achievement}</li>
+                        ))
+                            : "No achievements yet"}
+                    </ul>
+                    <button onClick={() => setEditing(true)}>Edit Profile</button>
+                    <button onClick={() => navigate('/groups')}>See Groups</button>
+                </>
+            ) : (
+                <form>
+                    <input
+                        type="text"
+                        name="name"
+                        value={form.name}
+                        onChange={handleInputChange}
+                        placeholder="Name"
+                    />
+                    <input
+                        type="email"
+                        name="email"
+                        value={form.email}
+                        onChange={handleInputChange}
+                        placeholder="Email"
+                    />
+                    <textarea
+                        name="hobbies"
+                        value={form.hobbies}
+                        onChange={handleInputChange}
+                        placeholder="Hobbies (comma-separated)"
+                    />
+                    <button type="button" onClick={handleSave}>Save</button>
+                    <button type="button" onClick={() => setEditing(false)}>Cancel</button>
+                </form>
+            )}
+
+            <h2>Create a New Group</h2>
+            <div id="group-form">
+                <form>
+                    <input
+                        type="text"
+                        name="name"
+                        value={newGroup.name}
+                        onChange={handleGroupChange}
+                        placeholder="Group Name"
+                    />
+                    <textarea
+                        name="description"
+                        value={newGroup.description}
+                        onChange={handleGroupChange}
+                        placeholder="Group Description"
+                    />
+                    <input
+                        type="text"
+                        name="hobby"
+                        value={newGroup.hobby}
+                        onChange={handleGroupChange}
+                        placeholder="Hobby"
+                    />
+                    <button type="button" onClick={handleCreateGroup}>Create Group</button>
+                </form>
+            </div>
         </div>
-    )}
-
-    {!editing ? (
-        <>
-            <p><strong>Email:</strong> {user.email}</p>
-            <p><strong>Hobbies:</strong> {user.hobbies?.join(", ") || "No hobbies listed"}</p>
-            <p><strong>Achievements:</strong></p>
-            <ul>
-                {user.achievements?.length
-                    ? user.achievements.map((achievement, index) => (
-                        <li key={index}>{achievement}</li>
-                ))
-                    : "No achievements yet"}
-            </ul>
-            <button onClick={() => setEditing(true)}>Edit Profile</button>
-        </>
-    ) : (
-        <form>
-            <input
-                type="text"
-                name="name"
-                value={form.name}
-                onChange={handleInputChange}
-                placeholder="Name"
-            />
-            <input
-                type="email"
-                name="email"
-                value={form.email}
-                onChange={handleInputChange}
-                placeholder="Email"
-            />
-            <textarea
-                name="hobbies"
-                value={form.hobbies}
-                onChange={handleInputChange}
-                placeholder="Hobbies (comma-separated)"
-            />
-            <button type="button" onClick={handleSave}>Save</button>
-            <button type="button" onClick={() => setEditing(false)}>Cancel</button>
-        </form>
-    )}
-
-    <h2>Create a New Group</h2>
-    <div id="group-form">
-        <form>
-            <input
-                type="text"
-                name="name"
-                value={newGroup.name}
-                onChange={handleGroupChange}
-                placeholder="Group Name"
-            />
-            <textarea
-                name="description"
-                value={newGroup.description}
-                onChange={handleGroupChange}
-                placeholder="Group Description"
-            />
-            <input
-                type="text"
-                name="hobby"
-                value={newGroup.hobby}
-                onChange={handleGroupChange}
-                placeholder="Hobby"
-            />
-            <button type="button" onClick={handleCreateGroup}>Create Group</button>
-        </form>
-    </div>
-</div>
-
     );
 };
 
