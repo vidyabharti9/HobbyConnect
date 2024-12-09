@@ -1,50 +1,84 @@
+/* HobbyGroups.css */
+
 .hobby-groups {
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh; /* Ensure the page takes full viewport height */
     padding: 20px;
-    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    box-sizing: border-box;
 }
 
 .hobby-groups h1 {
     font-size: 2.5em;
     margin-bottom: 10px;
+    color: #333;
 }
 
 .hobby-groups p {
     font-size: 1.2em;
+    margin-bottom: 20px;
     color: #666;
-    margin-bottom: 30px;
 }
 
 .hobby-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
-    padding: 20px;
+    width: 100%;
+    max-width: 1200px;
 }
 
 .hobby-card {
-    display: block;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-decoration: none;
-    color: black;
+    background-color: #fff;
     border: 1px solid #ddd;
-    border-radius: 8px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .hobby-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
 }
 
 .hobby-card img {
     width: 100%;
-    height: 150px;
+    height: 200px;
     object-fit: cover;
 }
 
 .hobby-card h2 {
-    padding: 10px;
+    margin: 15px 0;
     font-size: 1.5em;
+    color: #333;
+}
+
+.error {
+    color: red;
+    font-weight: bold;
+}
+
+/* Ensure footer stays at the bottom */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.footer {
+    margin-top: auto; /* Push the footer to the bottom */
 }

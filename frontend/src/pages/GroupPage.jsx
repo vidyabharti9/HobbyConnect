@@ -47,7 +47,6 @@ const GroupPage = () => {
                     );
                     setJoined(membershipResponse.data.isMember);
 
-                    // Fetch posts if the user is a member
                     if (membershipResponse.data.isMember) {
                         const postsResponse = await axios.get(
                             `http://localhost:5000/api/groups/${data.group._id}/posts`,

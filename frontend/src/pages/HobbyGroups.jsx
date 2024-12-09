@@ -40,7 +40,10 @@ const HobbyGroups = () => {
                 {groups.length > 0 ? (
                     groups.map((group) => (
                         <Link to={`/groups/${group._id}`} key={group._id} className="hobby-card">
-                            <img src={group.image || "/images/default.jpg"} alt={group.name} />
+                            <img
+                                src={group.image || "/appLogo.png"} // Corrected relative path
+                                alt={group.name || "Hobby Group Logo"}
+                            />
                             <h2>{group.name}</h2>
                         </Link>
                     ))

@@ -1,0 +1,30 @@
+.footer {
+    background-color: #222; /* Dark background */
+    color: #f8f8f8; /* Light text */
+    padding: 20px;
+    text-align: center;
+    border-top: 2px solid #444; /* Subtle top border */
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.social-icons {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between icons */
+}
+
+.social-icons a {
+    color: #f8f8f8; /* Default icon color */
+    font-size: 1.5em; /* Icon size */
+    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.social-icons a:hover {
+    color: #888; /* Change color on hover */
+    transform: scale(1.2); /* Zoom effect on hover */
+}

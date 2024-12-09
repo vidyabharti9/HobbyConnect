@@ -1,0 +1,197 @@
+/* General Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f2f5;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+div {
+    box-sizing: border-box;
+}
+
+/* Profile Container */
+#profile-container {
+    max-width: 900px;
+    margin: 30px auto;
+    background: #fff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
+    animation: fadeIn 0.8s ease-in-out;
+    padding: 20px;
+    text-align: center;
+    width: 40%;
+}
+
+/* Profile Picture */
+#profile-picture-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#profile-picture-container img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease-in-out;
+}
+
+#profile-picture-container img:hover {
+    transform: scale(1.1);
+}
+
+/* Buttons */
+button {
+    display: inline-block;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    background-color: #333;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    margin: 10px 5px;
+}
+
+button:hover {
+    background-color: #444;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+button:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+/* Form Inputs */
+form input, form textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 12px 0;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+    background-color: #f9f9f9;
+    transition: all 0.2s ease-in-out;
+}
+
+form input:focus, form textarea:focus {
+    outline: none;
+    border-color: #333;
+    background-color: #fff;
+    box-shadow: 0 0 4px rgba(51, 51, 51, 0.5);
+}
+
+/* Achievements Section */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    background: #f5f5f5;
+    margin: 5px 0;
+    padding: 12px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    animation: fadeInUp 0.5s ease;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Group Form Section */
+#group-form {
+    margin-top: 30px;
+    background: #f7f7f7;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.6s ease;
+}
+
+/* Center Align Form */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form input, form textarea {
+    max-width: 500px;
+}
+
+#group-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Form Header Styling */
+h2 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Additional Section Styling */
+#profile-container > h2 {
+    color: #444;
+}
+
+#profile-container p {
+    font-size: 16px;
+    color: #555;
+}
+
+#profile-container ul {
+    padding: 10px;
+}
+
+#profile-container button {
+    background-color: #060606;
+}
+
+#profile-container button:hover {
+    background-color: #4d4e4f;
+}
+
+/* Input Fields Border Color */
+form input, form textarea {
+    border-color: #dcdcdc;
+}
+
+form input:focus, form textarea:focus {
+    border-color: #444;
+}

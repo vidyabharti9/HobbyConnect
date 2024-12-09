@@ -1,0 +1,123 @@
+/* Outer Container */
+.outer-container {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #eae8e8, #111); /* Gradient background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    animation: fadeIn 1.5s ease-in-out;
+    width: 100%;
+}
+
+/* Scoped Styles for Login Container */
+.login-container {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f5c3; /* Light cream background */
+    color: #333; /* Neutral dark gray text */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: slideInUp 0.8s ease-in-out; /* Slide-in animation */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    width: 40%;
+    height: 60%;
+}
+
+/* Login Form Styles */
+.login-container form {
+    background-color: #ffffff; /* White background */
+    border: 1px solid #ddd; /* Light gray border */
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 30px 40px;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+/* Form Fields */
+.login-container input {
+    width: 100%;
+    padding: 9px 9px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f8f8f8;
+    color: #333;
+    font-size: 1em;
+    transition: border 0.3s ease-in-out;
+}
+
+.login-container input:focus {
+    outline: none;
+    border-color: #4e1b0c;
+}
+
+/* Submit Button */
+.login-container button {
+    width: 100%;
+    padding: 12px 15px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.login-container button:hover {
+    background-color: #111;
+    transform: scale(1.02);
+}
+
+.login-container button:active {
+    background-color: #444;
+}
+
+/* Heading Style */
+.login-container form h2 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    color: #222;
+}
+
+/* Form Container */
+.login-container form p {
+    font-size: 0.9em;
+    color: #777;
+}
+
+.login-container form p a {
+    color: #4e1b0c;
+    text-decoration: none;
+}
+
+.login-container form p a:hover {
+    text-decoration: underline;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInUp {
+    0% {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

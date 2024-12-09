@@ -1,0 +1,98 @@
+/* Container to isolate the registration form */
+.outer-container{
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #eae8e8, #111); /* Gradient background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  animation: fadeIn 1.5s ease-in-out;
+  width: 100%;
+}
+.register-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f4f4f4;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Form styles */
+form {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 420px;
+  border: 1px solid #e0e0e0;
+}
+
+form h2 {
+  font-size: 1.8em;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Input fields */
+form input[type="text"],
+form input[type="email"],
+form input[type="password"],
+form input[type="file"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 16px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  background-color: #f9f9f9;
+}
+
+/* Buttons */
+form button[type="submit"],
+form button[type="button"] {
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 14px 18px;
+  font-size: 16px;
+  margin-top: 20px;
+  width: 100%;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form button:hover {
+  background-color: #555;
+}
+
+/* Hobby List */
+form ul {
+  list-style: none;
+  padding: 0;
+  margin: 12px 0;
+}
+
+form ul li {
+  background-color: #e5e5e5;
+  color: #333;
+  padding: 10px;
+  margin-bottom: 8px;
+  border-radius: 6px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Profile picture preview */
+form div {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #666;
+}
