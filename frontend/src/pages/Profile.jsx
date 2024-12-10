@@ -101,7 +101,7 @@ const Profile = () => {
                 <div id="profile-picture-container">
                     <h2>Profile Picture:</h2>
                     <img
-                        src={`http://localhost:5000/${user.profilePicture}`}
+                        src={`https://hobbyconnect-1.onrender.com/${user.profilePicture}`}
                         alt="Profile"
                     />
                 </div>
