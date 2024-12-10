@@ -35,21 +35,21 @@ const GroupPage = () => {
             setLoading(true);
             try {
                 // Fetch group details by hobby
-                const { data } = await axios.get(`http://localhost:5000/api/groups/${hobby}`);
+                const { data } = await axios.get(`https://hobbyconnect-1.onrender.com/api/groups/${hobby}`);
                 setGroup(data.group);
 
                 const token = localStorage.getItem("token");
                 if (token) {
                     // Check membership status
                     const membershipResponse = await axios.get(
-                        `http://localhost:5000/api/groups/${data.group._id}/membership`,
+                        `https://hobbyconnect-1.onrender.com/api/groups/${data.group._id}/membership`,
                         { headers: getAuthHeaders() }
                     );
                     setJoined(membershipResponse.data.isMember);
 
                     if (membershipResponse.data.isMember) {
                         const postsResponse = await axios.get(
-                            `http://localhost:5000/api/groups/${data.group._id}/posts`,
+                            `https://hobbyconnect-1.onrender.com/api/groups/${data.group._id}/posts`,
                             { headers: getAuthHeaders() }
                         );
                         setPosts(postsResponse.data);
@@ -75,7 +75,7 @@ const GroupPage = () => {
             }
 
             await axios.post(
-                `http://localhost:5000/api/groups/${group.name}/join`,
+                `https://hobbyconnect-1.onrender.com/api/groups/${group.name}/join`,
                 {},
                 { headers }
             );
@@ -84,7 +84,7 @@ const GroupPage = () => {
 
             // Fetch posts after joining
             const postsResponse = await axios.get(
-                `http://localhost:5000/api/groups/${group._id}/posts`,
+                `https://hobbyconnect-1.onrender.com/api/groups/${group._id}/posts`,
                 { headers }
             );
             setPosts(postsResponse.data);
@@ -103,7 +103,7 @@ const GroupPage = () => {
             }
     
             const response = await axios.post(
-                `http://localhost:5000/api/groups/${group._id}/posts`, // Use group._id
+                `https://hobbyconnect-1.onrender.com/api/groups/${group._id}/posts`, // Use group._id
                 { content: newPost },
                 { headers: { Authorization: `Bearer ${token}` } }
             );
@@ -127,7 +127,7 @@ const GroupPage = () => {
     
             // Send a request to the backend to create a new comment
             const response = await axios.post(
-                `http://localhost:5000/api/groups/${group._id}/posts/${postId}/comments`,
+                `https://hobbyconnect-1.onrender.com/api/groups/${group._id}/posts/${postId}/comments`,
                 { comment_text: comment },
                 { headers: { Authorization: `Bearer ${token}` } }
             );
